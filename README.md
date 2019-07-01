@@ -16,8 +16,7 @@ As our goal is tracking/logging date and author, we create a seperate abstract e
 
 We add a JPA entity listener class i.e AuditingEntityListener, which contains the callback methods which will be used to persist and update these properties when we  do any changes in our persisted records.
 
-```
-@Data
+``
  @MappedSuperclass
  @EntityListeners(AuditingEntityListener.class)
  public abstract class AbstractAuditableEntity<U,ID> extends AbstractPersistableEntity<ID>{
