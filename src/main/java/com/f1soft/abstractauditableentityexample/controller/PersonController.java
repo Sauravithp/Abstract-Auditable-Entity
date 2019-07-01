@@ -21,6 +21,6 @@ public class PersonController {
 
     @PostMapping
     public ResponseEntity<?> save(@RequestBody Person person){
-        return ResponseEntity.ok().body(personService.create(person));
+        return ResponseEntity.ok(personService.create(person));
     }
 }
