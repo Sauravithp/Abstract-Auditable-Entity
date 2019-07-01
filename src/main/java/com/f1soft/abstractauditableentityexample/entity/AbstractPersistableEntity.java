@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
-@Data
+
 @MappedSuperclass
 public abstract class AbstractPersistableEntity<ID> implements Serializable {
     @Id
