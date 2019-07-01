@@ -45,21 +45,22 @@ We enable JPA Auditing by using **@EnableJpaAuditing**.**@EnableJpaAuditing** ac
 
 Date can be scaned by the methods provided by **@EnableJpaAuditing** but when scanning for author Jpa uses currently logged user through the implementation of getCurrentAuditor provided by AudiotrAware.
 
-### @Configuration
-### @EnableJpaAuditing(auditorAwareRef = "auditorAware")
-### public class JpaAuditingConfiguration {
-###     @Bean
-###   public AuditorAware<String> auditorAware(){
-###        return new AuditAwareImpl();
-###    }
-### }
+ ```
+ @Configuration
+ @EnableJpaAuditing(auditorAwareRef = "auditorAware")
+ public class JpaAuditingConfiguration {
+ @Bean
+ public AuditorAware<String> auditorAware(){
+ return new AuditAwareImpl();
+  }
+ }
 
-### public class AuditAwareImpl implements AuditorAware<String>{
-###    @Override
-###    public Optional<String> getCurrentAuditor() {
-###        return Optional.ofNullable("sauravi");
-###    }
-
+public class AuditAwareImpl implements AuditorAware<String>{
+  @Override
+  public Optional<String> getCurrentAuditor() {
+      return Optional.ofNullable("sauravi");
+   }
+```
  we can also use spring security, such that currently logged username can be obtained.
  
 Replace: return Optional.ofNullable("sauravi");
