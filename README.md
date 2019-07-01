@@ -16,7 +16,7 @@ As our goal is tracking/logging date and author, we create a seperate abstract e
 
 We add a JPA entity listener class i.e AuditingEntityListener, which contains the callback methods which will be used to persist and update these properties when we  do any changes in our persisted records.
 
-``
+```
  @MappedSuperclass
  @EntityListeners(AuditingEntityListener.class)
  public abstract class AbstractAuditableEntity<U,ID> extends AbstractPersistableEntity<ID>{
@@ -42,7 +42,7 @@ We add a JPA entity listener class i.e AuditingEntityListener, which contains th
 
 We enable JPA Auditing by using **@EnableJpaAuditing**.**@EnableJpaAuditing** accepts one argument auditorAwareRef where we need to pass the name of the AuditorAware bean.
 
-Date can be scaned by the methods provided by **@EnableJpaAuditing** but when scanning for author Jpa uses currently logged user through the implementation of getCurrentAuditor provided by AudiotrAware.
+Date can be scanned by the methods provided by **@EnableJpaAuditing** but when scanning for author Jpa uses currently logged user through the implementation of getCurrentAuditor() provided by AudiotrAware.
 
  ```
  @Configuration
@@ -61,8 +61,9 @@ public class AuditAwareImpl implements AuditorAware<String>{
    }
 ```
  we can also use spring security, such that currently logged username can be obtained.
- 
+
+```
 Replace: return Optional.ofNullable("sauravi");
 With:    SecurityContextHolder.getContext().getAuthentication().getName()
-
+```
 
