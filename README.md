@@ -16,26 +16,26 @@ As our goal is tracking/logging date and author, we create a seperate abstract e
 
 We add a JPA entity listener class i.e AuditingEntityListener, which contains the callback methods which will be used to persist and update these properties when we  do any changes in our persisted records.
 
-# @Data
-# @MappedSuperclass
-# @EntityListeners(AuditingEntityListener.class)
-# public abstract class AbstractAuditableEntity<U,ID> extends AbstractPersistableEntity<ID>{
+### @Data
+### @MappedSuperclass
+### @EntityListeners(AuditingEntityListener.class)
+### public abstract class AbstractAuditableEntity<U,ID> extends AbstractPersistableEntity<ID>{
   
-# @CreatedDate
-# @Column(name = "created_date", updatable = false)
-# LocalDate createdDate;
+### @CreatedDate
+### @Column(name = "created_date", updatable = false)
+### LocalDate createdDate;
 
-#    @LastModifiedDate
-#    LocalDate lastModifiedDate;
+###    @LastModifiedDate
+###    LocalDate lastModifiedDate;
 
-#    @CreatedBy
-#    @Column(name = "created_by",updatable = false)
-#    U createdBy;
+###    @CreatedBy
+###    @Column(name = "created_by",updatable = false)
+###    U createdBy;
 
-#    @LastModifiedBy
-#    @Column(name = "last_modified_by")
-#    U lastModifiedBy;
-#}
+###    @LastModifiedBy
+###    @Column(name = "last_modified_by")
+###    U lastModifiedBy;
+###   }
 
 
 ## Configuration
@@ -44,20 +44,20 @@ We enable JPA Auditing by using **@EnableJpaAuditing**.**@EnableJpaAuditing** ac
 
 Date can be scaned by the methods provided by **@EnableJpaAuditing** but when scanning for author Jpa uses currently logged user through the implementation of getCurrentAuditor provided by AudiotrAware.
 
-# @Configuration
-# @EnableJpaAuditing(auditorAwareRef = "auditorAware")
-# public class JpaAuditingConfiguration {
-#     @Bean
-#   public AuditorAware<String> auditorAware(){
-#        return new AuditAwareImpl();
-#    }
-# }
+### @Configuration
+### @EnableJpaAuditing(auditorAwareRef = "auditorAware")
+### public class JpaAuditingConfiguration {
+###     @Bean
+###   public AuditorAware<String> auditorAware(){
+###        return new AuditAwareImpl();
+###    }
+### }
 
-# public class AuditAwareImpl implements AuditorAware<String>{
-#    @Override
-#    public Optional<String> getCurrentAuditor() {
-#        return Optional.ofNullable("sauravi");
-#    }
+### public class AuditAwareImpl implements AuditorAware<String>{
+###    @Override
+###    public Optional<String> getCurrentAuditor() {
+###        return Optional.ofNullable("sauravi");
+###    }
 
  we can also use spring security, such that currently logged username can be obtained.
  
