@@ -1,6 +1,6 @@
 # Spring Data JPA Auditing
 
-##### JPA and Hibernate provides Automatic Auditing which means tracking/logging date and auditor when we do any changes in our persisted records.
+##### JPA and Hibernate provides Automatic Auditing which means tracking/logging date and author when we do any changes in our persisted records.
 
 This project will walk us through to the necessary steps and code that we will need to include in our project to automatically  persist the CreatedBy, CreatedDate, LastModifiedBy, and LastModifiedDate columns for any entity.
 
