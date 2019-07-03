@@ -9,8 +9,8 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "tbl_person")
-public class Person extends AbstractAuditableEntity<String,Long> {
+@Table(name = "tbl_employee")
+public class Employee extends AbstractAuditableEntity<String,Long> {
 
     @Column(name = "name")
     private String name;
