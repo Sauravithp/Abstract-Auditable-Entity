@@ -1,0 +1,3 @@
+2019-07-05 12:24:13 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Starting AbstractauditableentityexampleApplication on f1soft-sauravi with PID 29932 (/home/f1soft/Desktop/microservices/AbstractAuditableEntityExample/target/classes started by f1soft in /home/f1soft/Desktop/microservices/AbstractAuditableEntityExample)
+2019-07-05 12:24:13 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -The following profiles are active: prod
+2019-07-05 12:24:16 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Started AbstractauditableentityexampleApplication in 4.078 seconds (JVM running for 4.938)

@@ -15,9 +15,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee create(Employee Employee) {
-        log.debug("data saved");
-        log.info("Hello world");
-        log.warn("hi");
         return  EmployeeRepository.save(Employee);
     }
 }

@@ -15,9 +15,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person create(Person person) {
-        log.debug("data saved");
-        log.info("Hello world");
-        log.warn("hi");
-        return  personRepository.save(person);
+        log.info("saves the data in database - {}",person);
+        log.error("error logger");
+       return  personRepository.save(person);
     }
 }
