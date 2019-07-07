@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="PROD_HOME" value="/home/f1soft/Desktop/microservices/AbstractAuditableEntityExample"/>
+    <property name="PROD_HOME" value="${application.home:-.}/logs"/>
 
     <!--console output-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -75,7 +75,9 @@
                 ${PROD_HOME}/archived/log.%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
+                <maxFileSize>100MB</maxFileSize><!-- archive at this file size -->
+                <!--<maxHistory>60</maxHistory> &lt;!&ndash; maximum number of archive files to keep &ndash;&gt;-->
+                <!--<totalSizeCap>1GB</totalSizeCap>  &lt;!&ndash; maximum size of all logs &ndash;&gt;-->
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
 
@@ -86,7 +88,7 @@
         </encoder>
     </appender>
 
-    <!--send debug logs to file-->
+    <!--send info logs to file-->
     <logger name="com.f1soft.abstractauditableentityexample" level="INFO" additivity="false">
         <appender-ref ref="FILE_INFO"/>
         <appender-ref ref="STDOUT"/>

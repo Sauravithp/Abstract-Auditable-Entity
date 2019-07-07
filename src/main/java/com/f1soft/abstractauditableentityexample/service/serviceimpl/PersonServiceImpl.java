@@ -17,6 +17,7 @@ public class PersonServiceImpl implements PersonService {
     public Person create(Person person) {
         log.info("saves the data in database - {}",person);
         log.error("error logger");
+        System.out.println(personRepository.save(person));
        return  personRepository.save(person);
     }
 }
