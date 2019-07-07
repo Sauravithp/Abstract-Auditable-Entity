@@ -7,3 +7,14 @@
 2019-07-07 11:56:14 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Starting AbstractauditableentityexampleApplication on f1soft-sauravi with PID 10958 (/home/f1soft/Desktop/microservices/AbstractAuditableEntityExample/target/classes started by f1soft in /home/f1soft/Desktop/microservices/AbstractAuditableEntityExample)
 2019-07-07 11:56:14 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -The following profiles are active: dev
 2019-07-07 11:56:18 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Started AbstractauditableentityexampleApplication in 4.023 seconds (JVM running for 4.91)
+2019-07-07 12:03:59 [main] INFO  c.f.a.AbstractauditableentityexampleApplicationTests -Starting AbstractauditableentityexampleApplicationTests on f1soft with PID 1742 (started by f1soft in /home/f1soft/Code/back-end/AbstractAuditableEntityExample)
+2019-07-07 12:03:59 [main] INFO  c.f.a.AbstractauditableentityexampleApplicationTests -The following profiles are active: dev
+2019-07-07 12:05:45 [main] INFO  c.f.a.AbstractauditableentityexampleApplicationTests -Starting AbstractauditableentityexampleApplicationTests on f1soft with PID 2241 (started by f1soft in /home/f1soft/Code/back-end/AbstractAuditableEntityExample)
+2019-07-07 12:05:45 [main] INFO  c.f.a.AbstractauditableentityexampleApplicationTests -The following profiles are active: dev
+2019-07-07 12:05:49 [main] INFO  c.f.a.AbstractauditableentityexampleApplicationTests -Started AbstractauditableentityexampleApplicationTests in 4.055 seconds (JVM running for 4.731)
+2019-07-07 12:06:12 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Starting AbstractauditableentityexampleApplication on f1soft with PID 2345 (/home/f1soft/Code/back-end/AbstractAuditableEntityExample/target/classes started by f1soft in /home/f1soft/Code/back-end/AbstractAuditableEntityExample)
+2019-07-07 12:06:12 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -The following profiles are active: dev
+2019-07-07 12:06:14 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Started AbstractauditableentityexampleApplication in 2.864 seconds (JVM running for 3.44)
+2019-07-07 12:07:51 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Starting AbstractauditableentityexampleApplication on f1soft with PID 2534 (/home/f1soft/Code/back-end/AbstractAuditableEntityExample/target/classes started by f1soft in /home/f1soft/Code/back-end/AbstractAuditableEntityExample)
+2019-07-07 12:07:51 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -The following profiles are active: development
+2019-07-07 12:07:53 [restartedMain] INFO  c.f.a.AbstractauditableentityexampleApplication -Started AbstractauditableentityexampleApplication in 3.256 seconds (JVM running for 4.148)

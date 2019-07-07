@@ -1,6 +1,31 @@
 spring:
   profiles:
-    active: dev
+    active: development
+
+---
+server:
+  port: 7071
+
+message: Development mode is on
+
+spring:
+  profiles: development
+
+  application:
+    name: Abstract-Auditable-Entity(Development)
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/database_dev
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 ---
 server:
@@ -9,7 +34,7 @@ server:
 message: Production mode is on
 
 spring:
-  profiles: prod
+  profiles: production
 
   application:
     name: Abstract-Auditable-Entity(Production)
@@ -27,27 +52,3 @@ spring:
       ddl-auto: update
     show-sql: true
 
----
-server:
-  port: 7071
-
-message: Development mode is on
-
-spring:
-  profiles: dev
-
-  application:
-    name: Abstract-Auditable-Entity(Development)
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/database_dev
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-  jpa:
-    properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true

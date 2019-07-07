@@ -4,7 +4,7 @@
     <property name="PROD_HOME" value="${application.home:-.}/logs"/>
 
     <!--console output-->
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="CONSOLE_OUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
                 %d{yyyy-MM-dd HH:MM:ss} [%thread] %-5level %logger{36} -%msg%n
@@ -50,8 +50,8 @@
     </appender>
 
 
-    <appender name="FILE_ROOT" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${PROD_HOME}/root.log</file>
+    <appender name="FILE_WARNING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${PROD_HOME}/warning.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>
                 ${PROD_HOME}/archived/root.%d{yyyy-MM-dd}.%i.log
@@ -69,10 +69,10 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${PROD_HOME}/log.log</file>
+        <file>${PROD_HOME}/logger.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>
-                ${PROD_HOME}/archived/log.%d{yyyy-MM-dd}.%i.log
+                ${PROD_HOME}/archived/logger.%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>100MB</maxFileSize><!-- archive at this file size -->
@@ -89,23 +89,24 @@
     </appender>
 
     <!--send info logs to file-->
-    <logger name="com.f1soft.abstractauditableentityexample" level="INFO" additivity="false">
+    <logger name="com.f1soft.abstractauditableentityexample.service" level="INFO" additivity="false">
         <appender-ref ref="FILE_INFO"/>
-        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="CONSOLE_OUT"/>
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="com.f1soft.abstractauditableentityexample.service.serviceimpl.PersonServiceImpl" level="ERROR" additivity="false">
-        <appender-ref ref="FILE_ERROR"/>
+    <logger name="com.f1soft.abstractauditableentityexample.controller" level="INFO" additivity="false">
+        <appender-ref ref="FILE_INFO"/>
         <appender-ref ref="FILE"/>
     </logger>
+
     <logger name="org.springframework.web" level="ERROR" additivity="false">
         <appender-ref ref="FILE_ERROR"/>
         <appender-ref ref="FILE"/>
     </logger>
 
     <root level="WARN">
-        <appender-ref ref="FILE_ROOT"/>
+        <appender-ref ref="FILE_WARNING"/>
         <appender-ref ref="FILE"/>
     </root>
 </configuration>
